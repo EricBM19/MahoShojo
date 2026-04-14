@@ -1,7 +1,8 @@
 package dev.app.mahoShojo_boot.model;
 
-import dev.app.mahoShojo_boot.utils.IdGenerator;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class Enemy {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private String category;
@@ -20,7 +22,6 @@ public class Enemy {
     public Enemy() {}
 
     public Enemy(String name, String category, int distressPoints, int darknessLevel, List<String> darkArts) {
-        this.id = IdGenerator.generateEnemyId();
         this.name = name;
         this.category = category;
         this.distressPoints = distressPoints;
@@ -30,10 +31,6 @@ public class Enemy {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {

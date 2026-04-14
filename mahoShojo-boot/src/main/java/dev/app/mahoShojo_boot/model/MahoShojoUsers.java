@@ -1,14 +1,15 @@
 package dev.app.mahoShojo_boot.model;
 
-import dev.app.mahoShojo_boot.utils.IdGenerator;
-
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class MahoShojoUsers {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private String username;
@@ -18,7 +19,6 @@ public class MahoShojoUsers {
     public MahoShojoUsers() {}
 
     public MahoShojoUsers(String name, String username, String password, String email) {
-        this.id = IdGenerator.generateUserId();
         this.name = name;
         this.username = username;
         this.password = password;
