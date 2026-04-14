@@ -8,21 +8,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class mahoShojoUserTests {
-
-    @Autowired
-    MahoShojoUserRepository mahoShojoUserRepository;
-
-    @Test
-    void userTest() {
-
-        MahoShojoUsers mahoShojoUsers1 = new MahoShojoUsers("John", "JDoe", "12345", "jdoe@gmail.com");
-        System.out.println(mahoShojoUsers1);
-    }
-
-    @Test
-    void userTestDB() {
-        MahoShojoUsers mahoShojoUsers1 = new MahoShojoUsers("John", "JDoe", "12345", "jdoe@gmail.com");
-        mahoShojoUserRepository.save(mahoShojoUsers1);
-        System.out.println(mahoShojoUserRepository.findById(mahoShojoUsers1.getId()));
-    }
+    
 }

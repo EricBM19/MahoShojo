@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Character {
 
-    private String id;
+    private Long id;
     private String name;
     private String mahoShojoClass;
     private int combativa;

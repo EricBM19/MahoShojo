@@ -10,7 +10,7 @@ public class MahoShojoUsers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
     private String name;
     private String username;
     private String password;
@@ -25,7 +25,7 @@ public class MahoShojoUsers {
         this.email = email;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
