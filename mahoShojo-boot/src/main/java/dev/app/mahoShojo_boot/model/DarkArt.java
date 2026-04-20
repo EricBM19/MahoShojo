@@ -10,16 +10,14 @@ public class DarkArt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String description;
 
     @Enumerated(EnumType.STRING)
     private DarkArtType type;
 
     public DarkArt() {}
 
-    public DarkArt(String title, String description, DarkArtType type) {
+    public DarkArt(String title, DarkArtType type) {
         this.title = title;
-        this.description = description;
         this.type = type;
     }
 
@@ -35,14 +33,6 @@ public class DarkArt {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public DarkArtType getType() {
         return type;
     }
@@ -56,7 +46,6 @@ public class DarkArt {
         return "DarkArt{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
                 ", type=" + type +
                 '}';
     }
