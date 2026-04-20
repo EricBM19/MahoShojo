@@ -9,10 +9,12 @@ public class EnemyDarkArt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "enemy_id", nullable = false)
     private Enemy enemy;
 
-    @OneToMany
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "dark_art_id", nullable = false)
     private DarkArt darkArt;
 
     private int powerLevel;

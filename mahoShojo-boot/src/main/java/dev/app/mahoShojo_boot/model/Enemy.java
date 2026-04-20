@@ -3,6 +3,7 @@ package dev.app.mahoShojo_boot.model;
 import dev.app.mahoShojo_boot.enums.EnemyCategory;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,6 +20,9 @@ public class Enemy {
 
     private int distressPoints;
     private int darknessLevel;
+
+    @OneToMany(mappedBy = "enemy", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<EnemyDarkArt> darkArts = new ArrayList<>();
 
     public Enemy() {}
 

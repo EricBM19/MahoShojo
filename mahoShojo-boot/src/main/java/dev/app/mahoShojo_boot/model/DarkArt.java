@@ -3,6 +3,9 @@ package dev.app.mahoShojo_boot.model;
 import dev.app.mahoShojo_boot.enums.DarkArtType;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class DarkArt {
 
@@ -13,6 +16,9 @@ public class DarkArt {
 
     @Enumerated(EnumType.STRING)
     private DarkArtType type;
+
+    @OneToMany(mappedBy = "darkArt")
+    private List<EnemyDarkArt> enemies = new ArrayList<>();
 
     public DarkArt() {}
 
