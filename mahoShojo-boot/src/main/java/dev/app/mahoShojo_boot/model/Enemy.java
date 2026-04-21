@@ -22,7 +22,7 @@ public class Enemy {
     private int darknessLevel;
 
     @OneToMany(mappedBy = "enemy", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<EnemyDarkArt> darkArts = new ArrayList<>();
+    private List<EnemyDarkArt> enemyDarkArts = new ArrayList<>();
 
     public Enemy() {}
 
@@ -76,6 +76,15 @@ public class Enemy {
 
     public void setDarknessLevel(int darknessLevel) {
         this.darknessLevel = darknessLevel;
+    }
+
+    public List<EnemyDarkArt> getEnemyDarkArts() {
+        return enemyDarkArts;
+    }
+
+    public void addEnemyDarkArt(EnemyDarkArt enemyDarkArt) {
+        enemyDarkArts.add(enemyDarkArt);
+        enemyDarkArt.setEnemy(this);
     }
 
     @Override

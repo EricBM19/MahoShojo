@@ -1,5 +1,6 @@
 package dev.app.mahoShojo_boot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,11 +10,12 @@ public class EnemyDarkArt {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "enemy_id", nullable = false)
+    @JsonIgnore
     private Enemy enemy;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "dark_art_id", nullable = false)
     private DarkArt darkArt;
 

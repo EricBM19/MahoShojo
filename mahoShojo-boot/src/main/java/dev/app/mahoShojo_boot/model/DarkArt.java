@@ -17,9 +17,6 @@ public class DarkArt {
     @Enumerated(EnumType.STRING)
     private DarkArtType type;
 
-    @OneToMany(mappedBy = "darkArt")
-    private List<EnemyDarkArt> enemies = new ArrayList<>();
-
     public DarkArt() {}
 
     public DarkArt(String title, DarkArtType type) {
